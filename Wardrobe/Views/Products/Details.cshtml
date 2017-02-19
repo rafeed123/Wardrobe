@@ -1,0 +1,66 @@
+﻿@model Wardrobe.Models.ProductsTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductsTable</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessoriesTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessoriesTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BottomsTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottomsTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTypeTable.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTypeTable.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoesTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoesTable.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopsTable.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopsTable.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WardrobeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccessoriesTable">
+    <Key>
+      <PropertyRef Name="AccessoryID" />
+    </Key>
+    <Property Name="AccessoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Season" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Occason" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BottomsTable">
+    <Key>
+      <PropertyRef Name="BottomID" />
+    </Key>
+    <Property Name="BottomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Season" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Occasion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductsTable">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductTypeID" Type="int" Nullable="false" />
+    <Property Name="TopID" Type="int" />
+    <Property Name="BottomID" Type="int" />
+    <Property Name="ShoeID" Type="int" />
+    <Property Name="AccesoryID" Type="int" />
+    <Property Name="PhotoLink" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ProductTypeTable">
+    <Key>
+      <PropertyRef Name="ProductTypeID" />
+    </Key>
+    <Property Name="ProductTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ShoesTable">
+    <Key>
+      <PropertyRef Name="ShoeID" />
+    </Key>
+    <Property Name="ShoeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Season" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Occasion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TopsTable">
+    <Key>
+      <PropertyRef Name="TopID" />
+    </Key>
+    <Property Name="TopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Season" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Occasion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AccessoriesTable">
+    <End Role="AccessoriesTable" Type="Self.AccessoriesTable" Multiplicity="0..1" />
+    <End Role="ProductsTable" Type="Self.ProductsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccessoriesTable">
+        <PropertyRef Name="AccessoryID" />
+      </Principal>
+      <Dependent Role="ProductsTable">
+        <PropertyRef Name="AccesoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BottomsTable">
+    <End Role="BottomsTable" Type="Self.BottomsTable" Multiplicity="0..1" />
+    <End Role="ProductsTable" Type="Self.ProductsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BottomsTable">
+        <PropertyRef Name="BottomID" />
+      </Principal>
+      <Dependent Role="ProductsTable">
+        <PropertyRef Name="BottomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductTypeTable">
+    <End Role="ProductTypeTable" Type="Self.ProductTypeTable" Multiplicity="1" />
+    <End Role="ProductsTable" Type="Self.ProductsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTypeTable">
+        <PropertyRef Name="ProductTypeID" />
+      </Principal>
+      <Dependent Role="ProductsTable">
+        <PropertyRef Name="ProductTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShoesTable">
+    <End Role="ShoesTable" Type="Self.ShoesTable" Multiplicity="0..1" />
+    <End Role="ProductsTable" Type="Self.ProductsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShoesTable">
+        <PropertyRef Name="ShoeID" />
+      </Principal>
+      <Dependent Role="ProductsTable">
+        <PropertyRef Name="ShoeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TopsTable">
+    <End Role="TopsTable" Type="Self.TopsTable" Multiplicity="0..1" />
+    <End Role="ProductsTable" Type="Self.ProductsTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TopsTable">
+        <PropertyRef Name="TopID" />
+      </Principal>
+      <Dependent Role="ProductsTable">
+        <PropertyRef Name="TopID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WardrobeModelStoreContainer">
+    <EntitySet Name="AccessoriesTable" EntityType="Self.AccessoriesTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BottomsTable" EntityType="Self.BottomsTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductsTable" EntityType="Self.ProductsTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTypeTable" EntityType="Self.ProductTypeTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShoesTable" EntityType="Self.ShoesTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopsTable" EntityType="Self.TopsTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AccessoriesTable" Association="Self.FK_AccessoriesTable">
+      <End Role="AccessoriesTable" EntitySet="AccessoriesTable" />
+      <End Role="ProductsTable" EntitySet="ProductsTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BottomsTable" Association="Self.FK_BottomsTable">
+      <End Role="BottomsTable" EntitySet="BottomsTable" />
+      <End Role="ProductsTable" EntitySet="ProductsTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductTypeTable" Association="Self.FK_ProductTypeTable">
+      <End Role="ProductTypeTable" EntitySet="ProductTypeTable" />
+      <End Role="ProductsTable" EntitySet="ProductsTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShoesTable" Association="Self.FK_ShoesTable">
+      <End Role="ShoesTable" EntitySet="ShoesTable" />
+      <End Role="ProductsTable" EntitySet="ProductsTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TopsTable" Association="Self.FK_TopsTable">
+      <End Role="TopsTable" EntitySet="TopsTable" />
+      <End Role="ProductsTable" EntitySet="ProductsTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -20,14 +20,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Virtual Closet", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><img src="~/Content/icons/shirt.png" />@Html.ActionLink(" ", "Index", "Tops")</li>                        
-                    <li><img src="~/Content/icons/clothes.png" />@Html.ActionLink(" ", "Index", "Bottoms")</li>
-                    <li><img src="~/Content/icons/spectator.png" />@Html.ActionLink(" ", "Index", "Shoes")</li>                        
-                    <li><img src="~/Content/icons/necklace.png" />@Html.ActionLink(" ", "Index", "Accessories")</li>                                                
+                    <li><a href="~/tops"><img src="~/Content/icons/shirt.png" /></a>@*@Html.ActionLink(" ", "Index", "Tops")*@</li>                        
+                    <li><a href="~/bottoms"><img src="~/Content/icons/clothes.png" /></a>@*@Html.ActionLink(" ", "Index", "Bottoms")*@</li>
+                    <li><a href="~/shoes"><img src="~/Content/icons/spectator.png" /></a>@*@Html.ActionLink(" ", "Index", "Shoes")*@</li>                        
+                    <li><a href="~/accessories"><img src="~/Content/icons/necklace.png" /></a>@*@Html.ActionLink(" ", "Index", "Accessories")*@</li>                                                                  
                 </ul>
             </div>
         </div>

@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:#F8E0BE;
+    background-color:#F7F4E5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -34,6 +34,13 @@ textarea {
 }
 .footer{
     font-family: 'Barrio', cursive;
+}
+.navbar-inverse{
+    background-color:white;
+}
+.navbar-brand{
+    font-family: 'Barrio', cursive;
+
 }
 
 

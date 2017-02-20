@@ -2,23 +2,24 @@
     ViewBag.Title = "Home Page";
 }
 <div class="jumbotron">
-    <h1>Virtual Closet</h1>
-    <p class="lead">An application that lets you virtually manage the contents of your closet and match outfits.</p>
-    <p>@Html.ActionLink("Create Outfit", "Index", "Products")</p>
+    <div class="container-fluid">
+        <h1>Create an Outfit</h1>
+        <p class="lead">This feature lets you piece together outfits from the contents of your closet</p>
+        <p>@Html.ActionLink("Create Outfit", "Index", "Products")</p>
+    </div>
 </div>
-
-<div class="row">
+<div class="row" id="NavvyButtons">
     <div class="col-md-3">
-        <h2>@Html.ActionLink("Tops", "Index", "Tops")</h2>
+        <h2><img src="~/Content/icons/shirt.png" /> @Html.ActionLink("Tops", "Index", "Tops")</h2>
     </div>
     <div class="col-md-3">
-        <h2>@Html.ActionLink("Bottoms", "Index", "Bottoms")</h2>
+        <h2><img src="~/Content/icons/clothes.png" /> @Html.ActionLink("Bottoms", "Index", "Bottoms")</h2>
     </div>
     <div class="col-md-3">
-        <h2>@Html.ActionLink("Shoes", "Index", "Shoes")</h2>
+        <h2><img src="~/Content/icons/spectator.png" /> @Html.ActionLink("Shoes", "Index", "Shoes")</h2>
     </div>
     <div class="col-md-3">
-        <h2>@Html.ActionLink("Accessories", "Index", "Accessories")</h2>
+        <h2><img src="~/Content/icons/necklace.png" /> @Html.ActionLink("Accessories", "Index", "Accessories")</h2>
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color:#F8E0BE;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +23,17 @@ select,
 textarea {
     max-width: 280px;
 }
+.jumbotron {
+    background-image: url('images/Closet.jpg');
+    font-family: 'Barrio', cursive;
+    color:black;
+}
+.page-header{
+    text-align:center;
+    font-family: 'Barrio', cursive;
+}
+.footer{
+    font-family: 'Barrio', cursive;
+}
+
+

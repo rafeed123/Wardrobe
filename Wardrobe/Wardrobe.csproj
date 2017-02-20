@@ -214,6 +214,8 @@
     <Content Include="Content\icons\necklace.png" />
     <Content Include="Content\icons\shirt.png" />
     <Content Include="Content\icons\spectator.png" />
+    <Content Include="Content\images\business-man.png" />
+    <Content Include="Content\images\Closet.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -311,7 +313,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

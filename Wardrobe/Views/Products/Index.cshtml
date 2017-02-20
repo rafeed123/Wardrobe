@@ -5,7 +5,6 @@
 }
 
 <h2>Match An Outfit</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -20,6 +19,7 @@
                     <p>@Html.DisplayFor(modelItem => item.BottomsTable.Name)</p>
                     <p>@Html.DisplayFor(modelItem => item.ShoesTable.Name)</p>
                     <p>@Html.DisplayFor(modelItem => item.AccessoriesTable.Name)</p>
+                    <img src="@Url.Content("~/Content/images/business-man.png")"width="200"/>
                     <p>@Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })</p>
